@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/T4Tis/checkpoint3/compare/v1.0.0...v1.0.1) (2025-11-06)
+
+
+### Bug Fixes
+
+* Correção tag para o repositorio correto ([7cb2322](https://github.com/T4Tis/checkpoint3/commit/7cb2322e41dba45a59451c7c844e2d7a6ce1c5d6))
+
 ## 1.0.0 (2025-11-06)
 
 
