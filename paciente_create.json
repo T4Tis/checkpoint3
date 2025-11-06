@@ -1,0 +1,8 @@
+{
+    "nome": "Paciente Teste CI",
+    "endereco": "Rua Fiap, 123",
+    "bairro": "Vila Olimpia",
+    "email": "teste.ci@fiap.com.br",
+    "telefoneCompleto": "+5511987654321",
+    "dataNascimento": "25-10-1990"
+}

@@ -1,0 +1,25 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - develop
+      - feature/**
+      - hotfix
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+                #baixa do repo
+            -   name: Checkout
+                uses: actions/checkout@v5
+                # Aplicação
+            -   name: Build da Aplicação
+                run: mvn clean package -DskipTests
+                #test unit
+            -   name: Testes Unitários
+                run: mvn test   
+                #doker
+            -   name: Criação de Imagem
+                run: docker build -t checkpoint3 .

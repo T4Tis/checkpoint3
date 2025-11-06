@@ -1,9 +1,12 @@
-FROM maven:3.9.1-eclipse-temurin-17
-
-COPY . /opt/app
-
+#bild
+FROM maven:3.9.11-eclipse-temurin-17 AS build
 WORKDIR /opt/app
-
+COPY . .
 RUN mvn clean package -DskipTests
 
-CMD ["java", "-jar", "target/checkpoint3-0.0.1-SNAPSHOT.jar"]
+#runtime
+FROM eclipse-temurin:17-alpine-3.22
+RUN mkdir /opt/app
+COPY --from=build /opt/app/target/app.jar /opt/app/app.jar
+WORKDIR /opt/app
+CMD [ "java", "-jar", "app.jar"]

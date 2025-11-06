@@ -9,6 +9,11 @@ services:
       - "3306:3306"
     networks:
       - app-networks
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
   api:
     build: .
     depends_on:
